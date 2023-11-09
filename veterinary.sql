@@ -26,3 +26,14 @@ CREATE TABLE animals
    FOREIGN KEY (ownerid_fk) REFERENCES owners(ownerid)
    
    );
+
+   CREATE TABLE appointments
+   (
+    appointid INT PRIMARY KEY,
+    animalid_fk INT,
+    appointdate DATE NOT NULL,
+    reason VARCHAR(255) NOT NULL,
+
+    FOREIGN KEY (animalid_fk) REFERENCES Animals(animalid)
+);
+
