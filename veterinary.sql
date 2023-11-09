@@ -147,3 +147,6 @@ VALUES
 
         ALTER TABLE owners
         ADD registereddate DATE;
+
+        ALTER TABLE paymentdate
+        RENAME TO paymenttime;
