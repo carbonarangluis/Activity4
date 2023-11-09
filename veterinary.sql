@@ -144,3 +144,6 @@ VALUES
             (4,'Dr. Sofia','Reyes','Dermatology Specialist', 999-888-7777,'sofia@example.com'),
             (5,'Dr. Luis','Torres','Surgery Specialist', 123-555-7777,'luis@example.com'),
             (6,'Dr. Carmen','Fernandez','Ophthalmology Specialist', 333-222-1111,'carmen@example.com');
+
+        ALTER TABLE owners
+        ADD registereddate DATE;
