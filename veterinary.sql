@@ -34,10 +34,10 @@ CREATE TABLE animals
     appointdate DATE NOT NULL,
     reason VARCHAR(255) NOT NULL,
 
-    FOREIGN KEY (animalid_fk) REFERENCES Animals(animalid)
+    FOREIGN KEY (animalid_fk) REFERENCES animals(animalid)
 );
 
-CREATE TABLE Doctors (
+CREATE TABLE doctors (
     doctorid INT PRIMARY KEY,
     dfirstname VARCHAR(50),
     dlastname VARCHAR(50),
@@ -56,3 +56,16 @@ CREATE TABLE invoices
    FOREIGN KEY (appointid_fk) REFERENCES appointments(appointid)
    
    );
+
+   CREATE TABLE medicalrecords (
+    recordid INT PRIMARY KEY,
+    animalid_fk INT,
+    recorddate TIMESTAMP NOT NULL,
+    doctorid_fk INT,
+    diagnosis TEXT NOT NULL,
+    prescription TEXT NOT NULL,
+    notes TEXT NOT NULL,
+
+    FOREIGN KEY (animalid_fk) REFERENCES animals(animalid),
+    FOREIGN KEY (doctorid_fk) REFERENCES doctors(doctorid)
+);
