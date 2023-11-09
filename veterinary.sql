@@ -45,3 +45,14 @@ CREATE TABLE Doctors (
     phone VARCHAR(15),
     email VARCHAR(100)
 );
+
+CREATE TABLE invoices
+(
+   invoiceid INT PRIMARY KEY,
+   paymentdate TIME NOT NULL,
+   totalamount NUMERIC(10,2) NOT NULL,
+   appointi_fk INT,
+
+   FOREIGN KEY (appointid_fk) REFERENCES appointments(appointid)
+   
+   );
